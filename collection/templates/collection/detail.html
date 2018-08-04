@@ -1,0 +1,48 @@
+{% extends 'collection/base.html' %}
+{% block title %}collection{% endblock %}
+
+{% block body%}
+   
+    <div style="text-align: center; margin-top: 20px">
+        <img src="{{ category.category_logo }}" style="height: 100px; width: 100px">
+
+        <h1><u>{{ category.category_title }}</u></h1>
+    </div>
+
+
+
+<div  class="container" id="containerID" style="margin-top: 30px">
+  <div class="row">
+    {% for dress in category.dresses_set.all %}
+    <div class="col-md-3">
+      <div class="thumbnail " style="border-radius:20px ; width: 250px; height: 300px">
+
+              <a  href="{{ dress.dress_logo }}" data-lightbox="roadtrip">  <img id="myImg" src="{{ dress.dress_logo }}" style="height: 200px; width: 150px ;margin-top: 15px; border-radius: 15px"></a>
+
+              <h4 style="margin: 5px ; text-align: center"><strong><u>{{ dress.dress_title }}</u></strong></h4>
+
+              <p class="rates" style=" font-size: 15px ;text-align: center; margin: 5px">{{ dress.dress_price }} ₹</p>
+
+              <a href="" style="margin-left: 70px ; text-align: center; margin-bottom: 10px"><span class="glyphicon glyphicon-shopping-cart" aria-hidden="true">Add to Cart</span></a>
+
+      </div>
+     </div>
+    {% endfor %}
+
+<script src="path/to/lightbox.js"></script>
+
+  <script>
+    lightbox.option({
+      'resizeDuration': 200,
+      'wrapAround': true
+    })
+</script>
+
+  </div>
+</div>
+
+{% endblock %}
+
+
+
+

@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}AngelBoutique{% endblock %}</title>
+    {% load staticfiles %}
+
+    <link rel="stylesheet" type="text/css" href="{% static 'collection/style.css' %}">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link href='https://fonts.googleapis.com/css?family=Satisfy' rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link href="path/to/lightbox.css" rel="stylesheet">
+
+
+
+</head>
+<body class="boddy" >
+
+<nav class="nav navbar-inverse" style="height: 75px">
+
+    <div class="container-fluid">
+        <!--logo-->
+
+         <a class="navbar-brand" style="font-family:  cursive;  font-size: 30px ; margin-left: 5px; margin-top: 10px" href="{% url 'collection:index' %}">Angel Boutique</a>
+
+
+        <div class="navbar-header" style="padding-top: 0px">
+
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#topNavBar">
+                 <span class="icon-bar"></span>
+                 <span class="icon-bar"></span>
+                 <span class="icon-bar"></span>
+            </button>
+
+        </div>
+          <!-- items -->
+        <div class="collapse navbar-collapse" id="topNavBar" style="margin-top:-2px;">
+
+
+
+            <ul class="nav navbar-nav navbar-right" style="margin-top:10px; margin-right: auto" >
+
+                    <form class="navbar-form navbar-left" style="width: auto" role="search" method="get" action="#" >
+                        <div class="form-group">
+                            <input type="text" class="form-control"   name="q" placeholder="Search Posts" value="{{ request.GET.q }}">
+                              <button type="submit" value="search"  class="btn btn-info">Search</button>
+                        </div>
+
+                    </form>
+
+
+
+               <li class="">
+                    <a href="{% url 'collection:feedback_form' %}  " >
+                        <span class="glyphicon glyphicon-envelope" aria-hidden="true"></span>&nbsp; Contact Us
+                    </a>
+                </li>
+
+                   <li class="">
+                    <a href="{% url 'list'%}">
+                        <span class="glyphicon glyphicon-phone" aria-hidden="true"></span>&nbsp; Blog
+                    </a>
+                </li>
+
+                 <li class="">
+                        <a href="#Services">
+                            <span class="glyphicon glyphicon-th" aria-hidden="true"></span>&nbsp; Services
+                        </a>
+                  </li>
+
+                  <li class="">
+                        <a href="">
+                            <span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span>&nbsp; Cart
+                        </a>
+                  </li>
+
+                <li class="">
+                    <a href=" {% url 'home' %} ">
+                        <span class="glyphicon glyphicon-user" aria-hidden="true"></span>&nbsp; Account
+                    </a>
+                </li>
+
+
+
+            </ul>
+
+        </div>
+    </div>
+</nav>
+
+
+
+{% block body %}
+{% endblock %}
+
+    <footer>
+      <div id="foot">
+
+          <div class="social">
+              <h3>StayConnected</h3>
+              <a  class="social youtube" href="#" >
+                  <img src="https://image.flaticon.com/icons/svg/33/33671.svg"style="width: 30px; height: 30px">
+              </a>
+
+              <a class="social facebook" href="#">
+                  <img src="https://image.flaticon.com/icons/svg/174/174848.svg" style="width: 60px; height: 30px">
+              </a>
+
+              <a class="social twitter" href="#">
+                  <img src="https://image.flaticon.com/icons/svg/733/733579.svg" style="width: 30px; height: 30px">
+              </a>
+
+              <a class="social Instagram" href="#">
+                  <img src="https://image.flaticon.com/icons/svg/174/174855.svg" style="width: 30px; height: 30px">
+              </a>
+          </div>
+
+          <div class="contact">
+              <h3>Contact Us</h3>
+
+              <form class="contact" name="form" method="post" id="contact_us" action="{% url 'collection:feedback_form' %}" method="POST">
+                  {% csrf_token %}
+                  {{ form.as_p }}
+
+                  <label for="name">Name</label><br>
+                  <input class="text" name="name" type="text">
+                  <br><br>
+
+                  <label for="email">Email</label><br>
+                  <input class="text" name="email" type="text">
+                  <br><br>
+
+                  <label for="message">Message</label><br>
+                  <textarea class="message" name="message"></textarea>
+                  <br><br>
+
+                  <input class="submit " name="submit" type="submit" value="Submit">
+              </form>
+
+          </div>
+
+      </div>
+  </footer>
+
+
+
+</body>
+</html>

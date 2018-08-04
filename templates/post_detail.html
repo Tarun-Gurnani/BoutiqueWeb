@@ -1,0 +1,54 @@
+{% extends 'blog_base.html' %}
+
+{% block head_title %}{{ instance.title }} | {{ block.super }} {% endblock head_title %}
+
+<style>
+    {% block style %}
+
+        h1{
+        color: #777777;
+        }
+    {% endblock style %}
+</style>
+
+{% block content %}
+
+<div class="col-sm-6 col-sm-offset-3">
+{% if instance.image %}
+    <img src="{{ instance.image.url }}" class="img-responsive">
+{% endif %}
+ <h1>{{ title }} <small>{{ instance.timestamp |timesince}} ago</small></h1>
+
+<p>
+<div class="fb-like" data-href="https://developers.facebook.com/docs/plugins/" data-layout="standard" data-action="like" data-size="small" data-show-faces="true" data-share="true"></div>
+</p>
+<hr>
+
+<p>
+<a href="https://www.facebook.com/sharer/sharer.php?u=http://CodingForEntrepreneurs.com/">
+Facebook
+</a>
+|
+<a href="https://twitter.com/home?status=I'm%20going%20to%20learn%20to%20Code...%20Come%20build%20an%20web%20apsp%20with%20me!%20%23CFE%20and%20@justinmitchel%20http://codingforentrepreneurs.com/">
+Twitter
+</a>
+|
+<a href='https://plus.google.com/share?url=http://codingforentrepreneurs.com'>Google+</a>
+|
+<a href="https://www.linkedin.com/shareArticle?mini=true&url=http://swiftforentrepreneurs.com/&title=Be%20first%20%7C%20Join%20Swift%20for%20Entrepreneurs&summary=Swift%20for%20Entrepreneurs%20is%20a%20project-based%20programming%20course%20for%20non-technical%20founders.%20We'll%20learn%20how%20to%20build%20iOS%20apps%20from%20scratch%20using%20Apple's%20new%20programming%20language:%20Swift.%20Be%20first%20and%20learn%20with%20me!&source=http://swiftforentrepreneurs.com/">
+Linkedin
+</a>
+|
+<a href="http://www.reddit.com/submit?url=http://swiftforentrepreneurs.com/&title=Unlock%20to%20Learn%20Swift%20for%20Free!%20By%20Swift%20for%20Entrepreneurs.%20Made%20for%20Non%20Techincals.">Reddit</a>
+</p>
+
+<div class="row">
+<div class="col-sm-10 col-sm-offset-2">
+ {{ instance.content | linebreaks}}<br>
+
+<div class="fb-comments" data-href="https://developers.facebook.com/docs/plugins/comments#configurator" data-numposts="5"></div>
+</div>
+</div>
+</div>
+
+{% endblock content %}

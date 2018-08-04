@@ -1,0 +1,279 @@
+{% extends 'collection/base.html' %}
+
+
+{% block body %}
+
+
+
+            <div class="corosel_slider" >
+              <div id="myCarousel" class="carousel slide" data-ride="carousel">
+                <!--Indicators-->
+                <ol class="carousel-indicators">
+                  <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                  <li data-target="#myCarousel" data-slide-to="1"></li>
+                  <li data-target="#myCarousel" data-slide-to="2"></li>
+                  <li data-target="#myCarousel" data-slide-to="3"></li>
+                  <li data-target="#myCarousel" data-slide-to="4"></li>
+                  <li data-target="#myCarousel" data-slide-to="5"></li>
+                  <li data-target="#myCarousel" data-slide-to="6"></li>
+
+                </ol>
+
+
+
+
+                <div class="carousel-inner">
+
+
+                  <div class="item  active">
+                    <img src="https://samuelkleinberg.com/wp-content/uploads/2017/10/diamond-slider.jpg" alt="Jwellery" style="width:100%;">
+                  </div>
+
+                  <div class="item ">
+                    <img src="http://weindiansbuyindian.com/images/4.jpg" alt="Chicago" style="width:100%;">
+                  </div>
+
+                    <div class="item ">
+                    <img src="http://bellarosestyle.com/wp-content/uploads/2016/07/slider-shoshanna.jpg" alt="Los Angeles" style="width:100%;">
+                  </div>
+
+                  <div class="item">
+                    <img src="https://static.zarahome.net/8/static4/itxwebstandard/Lookbooks/LB_Perfumes/img/slider3_01.jpg?20180528095848" alt="New york" style="width:100%;">
+                  </div>
+
+                  <div class="item">
+                    <img src="http://www.dialnfashion.com/wp-content/uploads/2017/08/slider-3.jpg" alt="New york" style="width:100%;">
+                  </div>
+
+                  <div class="item ">
+                    <img src="http://www.formationapps.com/wp-content/uploads/2016/11/salwar-suit.jpg" alt="Los Angeles" style="width:100%;">
+                  </div>
+
+                  <div class="item ">
+                    <img src="https://www.stylior.com/site/images/home/slider_1.jpg" alt="Los Angeles" style="width:100%;">
+                  </div>
+
+
+                  <div class="item ">
+                    <img src="https://cdn.shopify.com/s/files/1/1770/2429/files/slider3.jpg?v=1521458789" alt="Los Angeles" style="width:100%;">
+                      <!--
+                      <div class="carousel-caption d-none d-md-block">
+                          <h>Your Service Expert in Jaipur</h>
+                          <p>Get instant , reliable and affordable services</p>
+                      </div>
+                      -->
+                  </div>
+
+
+
+                </div>
+
+
+
+
+
+                <!-- Left and right controls-->
+                <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+                  <span class="glyphicon glyphicon-chevron-left"></span>
+                  <span class="sr-only">Previous</span>
+                </a>
+                <a class="right carousel-control" href="#myCarousel" data-slide="next">
+                  <span class="glyphicon glyphicon-chevron-right"></span>
+                  <span class="sr-only">Next</span>
+                </a>
+              </div>
+            </div>
+
+
+
+    <script>
+$(document).ready(function(){
+    $(".thumbnail ").hover(function(){
+        $(this).css("background-color", "pink");
+        }, function(){
+        $(this).css("background-color", "white");
+    });
+});
+
+</script>
+
+
+<div  class="container" id="Services" style="margin-top: 40px">
+  <div class="row">
+    {% if object_list %}
+    {% for category in all_categories %}
+    <div class="col-md-2">
+      <div class="thumbnail " style="border-radius:20px">
+
+          <a class="caption"  href="{% url 'collection:detail' category.id %} " >{{ category.category_title }}
+              <img  class="HoverOpacity" src="{{ category.category_logo }}" style="width: 100px; height: 100px;margin-top: 20px ; margin-left: 30px">
+          </a>
+
+      </div>
+     </div>
+    {% endfor %}
+    {% endif %}
+  </div>
+</div>
+
+<!-- Begin #services-section -->
+    <section id="services"  class="services-section section-global-wrapper" style="margin: 10px ; text-align: left">
+        <div class="container">
+            <div class="row">
+
+                <br>
+                    <p class="services-header-body" style="text-align: center"><em><font size="6" face="Arial" color="#835100 " > Things we provide </font></em>  </p><hr>
+                </div>
+              <br>
+            </div>
+            <!-- Begin Services Row 1 -->
+            <div class="row services-row services-row-head services-row-1" style="width: 1230px">
+                <div class="col-lg4 col-md-4 col-sm-4 col-xs-12">
+                    <div class="services-group wow animated fadelnLeft" data-wow-offset="40">
+
+                            <i class="fa fa-refresh fa-spin fa-3x fa-fw"></i>
+                            <span class="sr-only">Loading...</span>
+
+
+                        <h4 class="services-title">A Solid, Secure Platform</h4>
+                      <p class="services-body">This might seem obvious, but no-one is going to buy from you if they can’t access your store. Making sure your site is built on a solid platform is essential to reaching your maximum sales potential. An eCommerce platform built on an unreliable system isn’t going to cut it, and whilst no service can guarantee one hundred percent uptime, it's important to choose the right foundations which your empire will be built upon.
+
+                    In the digital age, keeping customer data secure is another thing that’s incredibly important. Unfortunately, it's not an 'added touch' that some customers will appreciate, it's a necessity when it comes to building a reputable brand. For more information on keeping your store secure, read our blog post on gaining customer trust.
+
+                    At Statement, we recommend Shopify as a well-built solution for hosting your store, although it's always a good idea to research what's right for you before making a firm decision.
+                     </p>
+                        <p class="services-more"><a href="https://www.google.co.in/search?q=a+solid+secure+platform&tbm=isch&tbo=u&source=univ&sa=X&ved=0ahUKEwjvxtP68-vbAhXWbX0KHZTfDxwQsAQIhAE&biw=1515&bih=780">Find Out More</a></p>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                    <div class="services-group wow animated zoomIn" data-wow-offset="40">
+
+                            <i class="fa fa-refresh fa-spin fa-3x fa-fw"></i>
+                            <span class="sr-only">Loading...</span>
+
+                        <h4 class="services-title">Simple, Clean Navigation</h4>
+                        <p class="services-body">
+                                                        When you have a lot of great brands on board, and therefore a lot of products to sell, it can be easy to clutter up your site’s navigation with an overwhelming number of links. Stripping it down to the essentials helps keep your customer's journey straightforward and enjoyable.
+
+                                For example, instead of listing all of your brands in the top level of your navigation, create a link called ‘Brands’, or something similar, which reveals a dropdown menu containing the list of the brands you stock when the customer hovers their mouse over the link.
+
+                                Customers typically have a good idea of what they're looking for, even if they've never visited your site before. A mother visiting a childrenswear store for her son already knows what size and gender she is looking for, and so will expect to able to navigate to clothing solely for boys in less than two clicks. Having a 'Boys' link, housing the various product types in a dropdown underneath, is a great way to deliver this. </p>
+                        <p class="services-more"><a href="https://webdesignledger.com/30-examples-of-clean-and-minimal-website-navigation/#ffee9dc451">Find Out More</a></p>
+                    </div>
+                </div>
+
+                  <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                    <div class="services-group wow animated fadeInRight" data-wow-offset="40">
+
+                            <i class="fa fa-refresh fa-spin fa-3x fa-fw"></i>
+                            <span class="sr-only">Loading...</span>
+
+
+                        <h4 class="services-title">High Quality Imagery</h4>
+                                <p class="services-body">If customers can't see what they're buyingdue to grainy, poor quality product imagery, sales aren’t going to soar. Thankfully, thanks to the rise of great quality cameras on smartphones, which we all have in our pockets, DIY product photography is easier than you might think, and can be quite cost-effective.
+
+                                 It's not just your products that need to have great accompanying images; banners and logos should also be clear and easy to read. The fashion brands you stock should always send out a file to their stockists every season containing professional imagery, showing off their upcoming releases. Using these files, you can easily create branded artwork that you can use on your homepage carousel, or on the collection pages for each brand.</p>
+                                <p class="services-more"><a href="http://www.fourthsource.com/ecommerce/importance-images-selling-online-15936">Find Out More</a></p>
+                    </div>
+                </div>
+            </div>
+
+             <!-- End Serivces Row 1 -->
+
+
+			<!-- Start of Row 3 -->
+			<div class="row services-row services-row-tail services-row-2" style="width: 1230px">
+                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                    <div class="services-group wow animated fadeInLeft" data-wow-offset="40">
+                            <i class="fa fa-refresh fa-spin fa-3x fa-fw"></i>
+                            <span class="sr-only">Loading...</span>
+                        <h4 class="services-title">Size Guides</h4>
+                        <p class="services-body">Every brand has different sizing guidelines, and customers need to feel confident that they're going to be purchasing the right size for them, first time. We recommend including a size guide for each brand you have available (or every product, if it's available) and displaying it prominently on the product page, perhaps under the description.
+                                                  It's especially important to consider a size guide when selling internationally, as a size 10 in the UK equates to a size 6 in the US, and differs again when it comes to European sizing. Getting this right will not only help keep customers happy, it will also help decrease the amount of returns you will have to process from an operational point of view.</p>
+                        <p class="services-more"><a href="https://www.shopthemint.com/pages/size-guide">Find Out More</a></p>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                    <div class="services-group wow animated zoomIn" data-wow-offset="40">
+                            <i class="fa fa-refresh fa-spin fa-3x fa-fw"></i>
+                            <span class="sr-only">Loading...</span>
+                        <h4 class="services-title">Reasonable Pricing</h4>
+                        <p class="services-body">Women expect and deserve reasonable pricing for apparel. Clothing is certainly not cheap these days, so try to find pieces at a good price point to ensure that you can stay on budget and still be fashion-forward.
+                                                  So, what's reasonable pricing for fashionable attire? There's no true answer for this question, but if you're willing to dish out more cash for designer duds (and you take care of your clothes), your dollars may go a little further. There's a reason why expensive labels have a higher price tag. Aside from using premium fabrics, high-end designers generally spend more time and effort developing and producing clothing lines. Unfortunately, the term "you get what you pay for" applies, and the less expensive the item, the more likely it won't last more than a single season.</p>
+                        <p class="services-more"><a href="https://searchitchannel.techtarget.com/definition/fair-and-reasonable-price">Find Out More</a></p>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                    <div class="services-group wow animated fadeInRight" data-wow-offset="40">
+                            <i class="fa fa-refresh fa-spin fa-3x fa-fw"></i>
+                            <span class="sr-only">Loading...</span>
+                        <h4 class="services-title">Ease of Care</h4>
+                        <p class="services-body">Clothing that's easy to take care of is a huge bonus when shopping. Women want clothes to look new, even after multiple washings. Is it too much to expect T-shirts not to shrink or for jeans to not fade after a few spins in the dryer? Definitely not! And while not every piece of clothing is fit for the washing machine, the ability to keep a wardrobe in tact without having to replace items too often won't deplete your bank account. Just make sure to check labels before you buy items. You'd be surprised at how many simple shirts and pants are now recommended to be hand washed and air-dried, rather than washed in a machine. If taking care of clothing beyond sorting and folding is too much for you, skip those pieces and find something easier to care for. </p>
+
+                        <p class="services-more"><a href="https://www.merriam-webster.com/dictionary/ease">Find Out More</a></p>
+                    </div>
+                </div>
+			<!-- End Serivces Row 3 -->
+
+
+
+            <!-- Begin Services Row 2 -->
+            <div class="row services-row services-row-tail services-row-2" style="width: 1230px">
+                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+
+                            <i class="fa fa-refresh fa-spin fa-3x fa-fw"></i>
+                            <span class="sr-only">Loading...</span>
+
+                        <h4 class="services-title">Reassuring Policies</h4>
+                          <p class="services-body">One major barrier in the customer journey is the reassurance that the product they're about to buy has a comprehensive returns, refund and delivery policy that will ensure that their order arrives on time, and can easily be sent back if it's not right for them.
+
+                              Implementing these policies isn't difficult; it's as simple as creating a page on your store that is accessible from every other page on your store. Another great way of making your policies easily accessible is by including tabbed content on your product pages, which allows customers to easily navigate between each policy.
+
+                               And, if you're one of the few online retailers still contemplating whether or not you should accept returns, the answer is yes. It's extremely rare to find a physical store nowadays that doesn't have some form of a returns/refund policy in place, and online retail should be no <different class=""></different></p>
+
+                          <p class="services-more"><a href="https://econsultancy.com/blog/9906-handling-online-returns-14-best-practice-tips">Find Out More</a></p>
+                    </div>
+
+
+                 <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                    <div class="services-group wow animated zoomIn" data-wow-offset="40">
+                            <i class="fa fa-refresh fa-spin fa-3x fa-fw"></i>
+                            <span class="sr-only">Loading...</span>
+                        <h4 class="services-title">Product Reviews</h4>
+                        <p class="services-body">There's nothing more influential when it comes to clothing sales than other people's opinions. Implementing customer reviews is a great way not only to increase your brand's reputation and show that you're selling great products, but it can also be a way for you to gather and act on any negative feedback that may arise.
+
+                          Reviews are great for SEO, as they are content that shows search engines that you're a reputable brand. Customers often search for reviews of a product directly, and ranking high for this is a great way for sales to land on your doorstep.</p>
+                        <p class="services-more"><a href="https://www.digitaltrends.com/product-reviews/">Find Out More</a></p>
+                    </div>
+                </div>
+
+                  <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                    <div class="services-group wow animated fadeInRight" data-wow-offset="40">
+                            <i class="fa fa-refresh fa-spin fa-3x fa-fw"></i>
+                            <span class="sr-only">Loading...</span>
+                        <h4 class="services-title">Cross-Selling</h4>
+                        <p class="services-body"> Cross-selling is a useful feature on all kinds of eCommerce stores, but it's come to be almost expected on a lot of fashion sites. Including a cross-selling feature allows you to incorporate a 'Complete the Outfit' type service, something which many customers are happy to do.
+                                                  This not only boosts sales, but it can also make customers aware of products they couldn't find otherwise (although if this is the case, you might want to jump back to the tip around navigation). It's important that you make sure you're offering relevant products to those already in your customer’s cart; however, this could have a negative impact on your brand as it can be seen as being too sales-focused.</p>
+                        <p class="services-more"><a href="https://en.wikipedia.org/wiki/Cross-selling">Find Out More</a></p>
+                    </div>
+                </div>
+            </div>
+
+               <!-- End Serivces Row 2 -->
+
+
+    </section>
+    <!-- End #services-section -->
+
+<p class="services-header-body" style="text-align: center"><em><font size="6" face="Arial" color="#835100 " >Customer Reviews</font></em>  </p><hr>
+
+
+
+
+
+
+
+{% endblock %}
